@@ -44,14 +44,14 @@ export const catalogo = [
         marca: 'Zara', 
         nome: 'Casaco de Lã com Botões', 
         preco: 170, 
-        imagem: 'product-6', 
+        imagem: 'product-6.jpg', 
         feminino: true, 
     }, 
     { id: '7', 
         marca: 'Zara', 
         nome: 'Casaco com Botões', 
         preco: 75, 
-        imagem: 'product-7', 
+        imagem: 'product-7.jpg', 
         feminino: true, 
     }, 
     { 
@@ -59,7 +59,15 @@ export const catalogo = [
         marca: 'Zara', 
         nome: 'Colete Comprido com Cinto', 
         preco: 88, 
-        imagem: 'product-8', 
+        imagem: 'product-8.jpg', 
         feminino: true, 
     },
 ];
+
+export function salvarLocalStore(chave, informacao) {
+    localStorage.setItem(chave, JSON.stringify(informacao));
+}
+
+export function lerLocalStore(chave) {
+    return JSON.parse(localStorage.getItem(chave));
+}
