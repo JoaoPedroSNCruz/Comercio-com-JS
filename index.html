@@ -19,7 +19,7 @@
         </button>
       </div>
       <section id="produtos-carrinho" class="h-3/5 overflow-y-auto flex flex-col gap-2"></section>
-      <p id="preco-total">$200</p>
+      <p id="preco-total" class="bg-slate-200 text-green-800 rounded-sm pl-5">Total: $0</p>
       <button class="bg-slate-200 text-slate-900 p-1">Finalizar Compra</button>
     </section>
     <header
@@ -37,7 +37,15 @@
         <button class="mr-2"><i class="fa-solid fa-user"></i></button>
       </div>
     </header>
-    <main>
+    <main class="flex flex-col items-center">
+      <section id="filtros" class="p-10">
+        <input id="exibir-todos" type="radio" />
+        <label for="exibir-todos">Todos</label>
+        <input id="exibir-feminino" type="radio" />
+        <label for="exibir-feminino">Femininos</label>
+        <input id="exibir-masculino" type="radio" />
+        <label for="exibir-masculino">Masculinos</label>
+      </section>
       <section
         id="container-produto"
         class="flex flex-wrap p-10 justify-center gap-10"
