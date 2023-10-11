@@ -38,13 +38,19 @@
       </div>
     </header>
     <main class="flex flex-col items-center">
-      <section id="filtros" class="p-10">
-        <input id="exibir-todos" type="radio" />
-        <label for="exibir-todos">Todos</label>
-        <input id="exibir-feminino" type="radio" />
-        <label for="exibir-feminino">Femininos</label>
-        <input id="exibir-masculino" type="radio" />
-        <label for="exibir-masculino">Masculinos</label>
+      <section id="filtros" class="p-10 flex">
+        <div class="px-2">
+          <input id="exibir-todos" type="radio" name="filtro" class="peer hidden" checked/>
+          <label for="exibir-todos" class="select-none cursor-pointer peer-checked:bg-slate-950 peer-checked:text-slate-200 peer-checked:font-bold p-2 rounded-xl">Todos</label>
+        </div>
+        <div class="px-2">
+          <input id="exibir-femininos" type="radio" name="filtro" class="peer hidden"/>
+          <label for="exibir-femininos" class="select-none cursor-pointer peer-checked:bg-slate-950 peer-checked:text-slate-200 peer-checked:font-bold p-2 rounded-xl">Femininos</label>
+        </div>
+        <div class="px-2">
+          <input id="exibir-masculinos" type="radio" name="filtro" class="peer hidden"/>
+          <label for="exibir-masculinos" class="select-none cursor-pointer peer-checked:bg-slate-950 peer-checked:text-slate-200 peer-checked:font-bold p-2 rounded-xl">Masculinos</label>
+        </div>
       </section>
       <section
         id="container-produto"
