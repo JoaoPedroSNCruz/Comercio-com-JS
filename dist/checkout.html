@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="module" crossorigin src="/%3CComercio-com-JS%3E/assets/checkout-7d6aa893.js"></script>
+    <link rel="modulepreload" crossorigin href="/%3CComercio-com-JS%3E/assets/utilidades-7e96fa01.js">
+    <link rel="stylesheet" href="/%3CComercio-com-JS%3E/assets/utilidades-6f3b383f.css">
+  </head>
+  <body class="bg-stone-200 flex flex-col h-screen">
+    <header
+      class="flex text-xl bg-slate-950 shadow-xl shadow-slate-400 px-8 py-4 justify-between sticky top-0 z-10"
+    >
+    <a href="./">
+      <img
+      class="h-16"
+      src="/%3CComercio-com-JS%3E/assets/hashtag-c999015c.svg"
+      alt="Logo do Magazine Hashtag."
+      />
+    </a>
+    </header>
+    <form class="flex w-100 px-5 gap-4 py-10 grow">
+      <section id="dados-usuario" class="w-1/3 bg-white rounded-lg py-5">
+        <p class="mb-5 text-center font-bold">Seus Dados</p>
+        <div class="flex flex-col px-10 py-3">
+          <label for="name" class="font-bold text-sm mb-2">Name:</label>
+          <input type="text" id="name" class="rounded-sm px-2 border-2 border-slate-300 py-1" placeholder="João Pinheiro" required>
+        </div>
+        <div class="flex flex-col px-10 py-3">
+          <label for="email" class="font-bold text-sm mb-2">E-mail:</label>
+          <input type="email" id="email" class="rounded-sm px-2 border-2 border-slate-300 py-1" placeholder="your.mail@mail.com" required>
+        </div>
+        <div class="flex flex-col px-10 py-3">
+          <label for="phone" class="font-bold text-sm mb-2">Phone:</label>
+          <input type="tel" id="phone" class="rounded-sm px-2 border-2 border-slate-300 py-1" placeholder="+55 (55) 55555-5555" required>
+        </div>
+      </section>
+      <section id="pagamento-entrega" class="w-1/3 bg-white rounded-lg py-5">
+        <p class="mb-5 text-center font-bold">Pagamento e Entrega</p>
+        <div class="flex flex-col px-10 py-3">
+          <label for="num-cartao" class="font-bold text-sm mb-2">Numero do Cartão:</label>
+          <input type="text" id="num-cartao" class="rounded-sm px-2 border-2 border-slate-300 py-1" placeholder="1111 1111 1111 1111" required>
+        </div>
+        <div class="flex">
+          <div class="flex flex-col px-10 py-3 w-1/2">
+            <label for="cvv" class="font-bold text-sm mb-2">CVV:</label>
+            <input type="number" id="cvv" class="rounded-sm px-2 border-2 border-slate-300 py-1" placeholder="111" required>
+          </div>
+          <div class="flex flex-col px-10 py-3 w-1/2">
+            <label for="data-validade" class="font-bold text-sm mb-2">Data de Validade:</label>
+            <input type="number" id="data-validade" class="rounded-sm px-2 border-2 border-slate-300 py-1" placeholder="01/21" required>
+          </div>
+        </div>
+        <div class="flex flex-col px-10 py-3">
+          <label for="cep" class="font-bold text-sm mb-2">CEP:</label>
+          <input type="number" id="cep" class="rounded-sm px-2 border-2 border-slate-300 py-1" placeholder="11111-111" required>
+        </div>
+        <div class="flex flex-col px-10 py-3">
+          <label for="endereco" class="font-bold text-sm mb-2">Endereço:</label>
+          <input type="text" id="endereco" class="rounded-sm px-2 border-2 border-slate-300 py-1" placeholder="Avenida bessao" required>
+        </div>
+        <div class="flex">
+          <div class="flex flex-col px-10 py-3 w-1/2">
+            <label for="numero" class="font-bold text-sm mb-2">Número logradouro:</label>
+            <input type="number" id="numero" class="rounded-sm px-2 border-2 border-slate-300 py-1" placeholder="1111" required>
+          </div>
+          <div class="flex flex-col px-10 py-3 w-1/2">
+            <label for="complemento" class="font-bold text-sm mb-2">Complemento:</label>
+            <input type="text" id="complemento" class="rounded-sm px-2 border-2 border-slate-300 py-1" placeholder="Portao F" required>
+          </div>
+        </div>
+      </section>
+      <section id="produtos-checkout" class="w-1/3 bg-white rounded-lg py-5">
+        <section id="container-produtos-checkout" class="h-4/5 overflow-y-auto px-2"></section>
+        <section id="celula-checkout" class="flex flex-col px-2 h-1/5 justify-around">
+          <p id="preco-total" class="bg-slate-200 text-green-800 rounded-lg pl-5">Total: $0</p>
+          <button class="bg-slate-900 text-slate-200 hover:bg-slate-800 hover:text-slate-200 p-1" type="submit">Finalizar Compra</button>
+        </section>
+      </section>
+    </form>
+    
+  </body>
+</html>

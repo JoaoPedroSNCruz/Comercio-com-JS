@@ -1,0 +1,20 @@
+import{l as x,c as i,s as a}from"./utilidades-7e96fa01.js";const o=x("carrinho")??{};function C(){document.getElementById("carrinho").classList.add("right-[0px]"),document.getElementById("carrinho").classList.remove("right-[-360px]")}function y(){document.getElementById("carrinho").classList.remove("right-[0px]"),document.getElementById("carrinho").classList.add("right-[-360px]")}function b(){Object.keys(o).length!==0&&(window.location.href="./checkout.html")}function v(){const t=document.getElementById("fechar-carrinho"),e=document.getElementById("abrir-carrinho"),n=document.getElementById("finalizar-compra");t.addEventListener("click",y),e.addEventListener("click",C),n.addEventListener("click",b)}function m(t){delete o[t],a("carrinho",o),c(),g()}function u(t){o[t]++,c(),a("carrinho",o),f(t)}function $(t){if(o[t]===1){m(t);return}o[t]--,a("carrinho",o),c(),f(t)}function f(t){document.getElementById(`quantidade-${t}`).innerText=o[t]}function h(t){const e=i.find(d=>d.id===t),n=document.getElementById("produtos-carrinho"),r=document.createElement("article"),p=["flex","bg-slate-200","rounded-lg","p-1","relative"];for(const d of p)r.classList.add(d);const E=`<button id="remover-item-${e.id}" class="absolute top-0 right-2">
+      <i class="fa-solid fa-circle-xmark text-slate-500 hover:text-slate-800"></i>
+    </button>
+    <img class="h-24 rounded-lg" src="./assets/img/${e.imagem}" alt="Carrinho: ${e.nome}">
+    <div class="p-3 flex flex-col justify-between">
+      <p class="text-slate-900 text-sm">${e.nome}</p>
+      <p class="text-slate-500 text-xs">Tamanho: M</p>
+      <p class="text-green-700 text-lg">$${e.preco}</p>
+    </div>
+    <div class="text-lg flex text-slate-900 items-end absolute bottom-0 right-2">
+        <button id="decrementar-produto-${e.id}">-</button>
+        <p id="quantidade-${e.id}" class="ml-2">${o[e.id]}</p>
+        <button id="incrementar-produto-${e.id}" class="ml-2">+</button>
+    </div>`;r.innerHTML=E,n.appendChild(r),document.getElementById(`incrementar-produto-${e.id}`).addEventListener("click",()=>u(e.id)),document.getElementById(`decrementar-produto-${e.id}`).addEventListener("click",()=>$(e.id)),document.getElementById(`remover-item-${e.id}`).addEventListener("click",()=>m(e.id))}function g(){const t=document.getElementById("produtos-carrinho");t.innerHTML="";for(const e in o)h(e)}function B(t){if(t in o){u(t);return}o[t]=1,a("carrinho",o),c(),h(t)}function c(){const t=document.getElementById("preco-total");let e=0;for(const n in o)e+=i.find(r=>r.id===n).preco*o[n];t.innerText=`Total: $${e}`}function L(){for(const t of i){const e=`<div class='group rounded-lg shadow-xl shadow-slate-400 m-2 w-48 flex flex-col p-2 justify-between ${t.feminino?"feminino":"masculino"}' id="card-produto-${t.id}">
+        <img class='group-hover:scale-110 duration-300 my-3 rounded-lg' src="./assets/img/${t.imagem}" alt="Produto ${t.id} do Comércio com JS">
+        <p class="text-sm">${t.marca}</p>
+        <p class='text-sm'>${t.nome}</p>
+        <p class='text-sm'>$${t.preco}</p>
+        <button id="adicionar-${t.id}" class="bg-slate-900 hover:bg-slate-700 text-slate-200" ><i class="fa-solid fa-cart-plus"></i></button>
+        </div>`;document.getElementById("container-produto").innerHTML+=e}for(const t of i)document.getElementById(`adicionar-${t.id}`).addEventListener("click",()=>B(t.id))}const s=document.getElementById("container-produto");function l(){const t=Array.from(s.getElementsByClassName("hidden"));for(const e of t)e.classList.remove("hidden")}function I(){l();const t=Array.from(s.getElementsByClassName("feminino"));for(const e of t)e.classList.add("hidden")}function k(){l();const t=Array.from(s.getElementsByClassName("masculino"));for(const e of t)e.classList.add("hidden")}function T(){document.getElementById("exibir-todos").addEventListener("click",l),document.getElementById("exibir-femininos").addEventListener("click",k),document.getElementById("exibir-masculinos").addEventListener("click",I)}L();v();g();T();
